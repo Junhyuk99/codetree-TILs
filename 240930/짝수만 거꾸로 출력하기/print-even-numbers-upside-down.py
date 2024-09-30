@@ -4,5 +4,6 @@ arr2 = []
 for ele in arr:
     if int(ele)%2==0:
         arr2.append(ele)
+arr2.reverse()
 for ele in arr2:
     print(ele, end= ' ')
