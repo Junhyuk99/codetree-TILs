@@ -8,4 +8,3 @@ while True:
         break
     cnt += 1
     total += n
-    print(total, cnt)
