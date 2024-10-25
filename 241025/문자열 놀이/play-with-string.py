@@ -16,4 +16,4 @@ for _ in range(q):
                 new[i] = arr[2]
         for ele in new:
             print(ele, end='')
-            print()
+        print()
