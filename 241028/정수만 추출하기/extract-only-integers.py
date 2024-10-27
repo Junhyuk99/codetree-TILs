@@ -1,6 +1,6 @@
 a,b = input().split()
-n1 = 0
-n2 = 0
+n1 = len(a)
+n2 = len(b)
 for i in range(len(a)):
     if a[i] < '0' or a[i] >'9':
         n1 = i
