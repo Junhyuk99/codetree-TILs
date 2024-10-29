@@ -4,4 +4,6 @@ def year(y):
         return "false"
     if y%4==0:
         return "true"
+    else:
+        return 'false'
 print(year(y))
