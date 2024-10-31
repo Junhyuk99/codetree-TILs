@@ -13,9 +13,9 @@ def weather(y,m,d):
         elif 9<=m<=11:
             return("Fall")
 
-    elif y%4==0 and 4%100==0:
+    elif y%4==0 and y%100==0:
         if m == 2:
-            if d > 29:
+            if d > 28:
                 return(-1)
         if m==12 or m==1 or m==2:
             return("Winter")
