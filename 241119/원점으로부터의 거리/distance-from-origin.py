@@ -5,6 +5,6 @@ for i in range(1,n+1):
     points.append((int(x), int(y),i))
 
 # 출력
-points.sort(key=lambda x: x[0]+x[1])
+points.sort(key=lambda x: abs(x[0])+abs(x[1]))
 for x, y,i in points:
     print(f"{i}")
