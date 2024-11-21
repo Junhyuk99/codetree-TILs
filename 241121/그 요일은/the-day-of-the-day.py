@@ -25,4 +25,5 @@ while diff < 0:
 
 # 알맞은 요일의 이름을 출력합니다.
 day_of_week = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-print(diff//7 + 1)
+diff_day = day_of_week.index(A)
+print((diff-diff_day+2)//7 )
