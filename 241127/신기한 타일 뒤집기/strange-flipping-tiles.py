@@ -1,25 +1,37 @@
-n = int(input())  # 명령의 개수
-now = 0  # 현재 위치
-mini = 0  # 최소 위치
-maxi = 0  # 최대 위치
+MAX_K = 100000
 
-# 명령 수행
-for i in range(n):
-    a, b = input().split()
-    a = int(a)
-    if b == 'L':
-        now -= a
-        mini = min(mini, now)
-    elif b == 'R':
-        now += a
-        maxi = max(maxi, now)
+# 변수 선언 및 입력:
+n = int(input())
+a = [0] * (2 * MAX_K + 1)
+b, w = 0, 0
 
-# 마지막 명령에 따른 타일 개수 계산
-if b == 'R':  # 마지막 명령이 R일 때
-    black = now - mini + 1
-    white = maxi - now
-elif b == 'L':  # 마지막 명령이 L일 때
-    black = now - mini
-    white = maxi - now + 1
+cur = MAX_K
+for _ in range(n):
+    x, c = tuple(input().split())
+    x = int(x)
 
-print(white, black)  # 검은색과 흰색 타일 출력
+    if c == 'L':
+        # x칸 왼쪽으로 칠합니다.
+        while x > 0:
+            a[cur] = 1
+            x -= 1
+
+            if x: 
+                cur -= 1
+    else:
+        # x칸 오른쪽으로 칠합니다.
+        while x > 0:
+            a[cur] = 2
+            x -= 1
+
+            if x: 
+                cur += 1
+
+for i in range(2 * MAX_K + 1):
+    if a[i] == 1: 
+        w += 1
+    if a[i] == 2: 
+        b += 1
+
+# 정답을 출력합니다.
+print(w, b)
